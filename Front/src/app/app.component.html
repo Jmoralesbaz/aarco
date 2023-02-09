@@ -1,0 +1,89 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary bg-black">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Examen Aarco</a>
+    </div>
+</nav>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-10 ">
+            <div class="row">
+                <div class="col-6">
+                
+                    <div class="row">
+                        <div class="col-12">
+                            <h2>Coche</h2>
+                            <div class="row">
+                                <div class="col-12">
+                                    <label for="disabledSelect" class="form-label">Marcas</label>
+                                    <select id="disabledSelect" class="form-select" [(ngModel)]="MarcaSelct"
+                                        (change)="loadSubmarcas()">
+                                        <option value="0" selected>Selecciona un opcion</option>
+                                        <option *ngFor="let marc of Marcas" [value]="marc.id">
+                                            {{marc.marca}}
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label for="disabledSelect" class="form-label">SubMarcas</label>
+                                    <select id="disabledSelect" class="form-select" [(ngModel)]="SubmarcaSelect"
+                                        (change)="loadModelos()">
+                                        <option value="0" selected>Selecciona un opcion</option>
+                                        <option *ngFor="let sub of Submarcas" [value]="sub.id">
+                                            {{sub.subMarca}}
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label for="disabledSelect" class="form-label">Modelos</label>
+                                    <select id="disabledSelect" class="form-select" [(ngModel)]="ModeloSelect"
+                                        (change)="loadDescripciones()">
+                                        <option value="0" selected>Selecciona un opcion</option>
+                                        <option *ngFor="let mod of Modelos" [value]="mod.id">
+                                            {{mod.modelo}}
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label for="disabledSelect" class="form-label">Descripciones</label>
+                                    <select id="disabledSelect" class="form-select" [(ngModel)]="DescripcionSelect">
+                                        <option value="0" selected>Selecciona un opcion</option>
+                                        <option *ngFor="let desc of Descripcion" [value]="desc.descripcionId">
+                                            {{desc.descripcion}}
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <h2>Direccion</h2>
+                            <div class="row">
+                                <div class="input-group input-group-sm mb-3 col-12">
+                                    <span class="input-group-text" id="inputGroup-sizing-sm">CP</span>
+                                    <input type="number" class="form-control" maxlength="5" minlength="5" [(ngModel)]="cpSearch" (keydown)="buscarCP()" >
+                                </div>
+                                <div class="input-group input-group-sm mb-3 col-12">
+                                    <span class="input-group-text" id="inputGroup-sizing-sm">Estado</span>
+                                    <input type="text" [(ngModel)]="estado" class="form-control" disabled >
+                                </div>
+                                <div class="input-group input-group-sm mb-3 col-12">
+                                    <span class="input-group-text" id="inputGroup-sizing-sm">Municipio</span>
+                                    <input type="text" [(ngModel)]="municipio" class="form-control" disabled >
+                                </div>
+                                <div class="col-12">
+                                    <label for="disabledSelect" class="form-label">Colonia</label>
+                                    <select  id="disabledSelect" class="form-select" [(ngModel)]="ColoniaSelect"
+                                        >
+                                        <option value="0" selected>Selecciona un opcion</option>
+                                        <option *ngFor="let ubi of ubicaciones" [value]="ubi.iIdUbicacion">
+                                            {{ubi.sUbicacion}}
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
